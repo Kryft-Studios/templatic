@@ -1,0 +1,31 @@
+{
+  "name": "templatic",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "author": {
+    "name": "Kryft-Studios",
+    "email": "AfriaStudios@outlook.on"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "pnpm lint && node build.js",
+    "lint": "eslint .",
+    "docs": "typedoc",
+    "release": "krw"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

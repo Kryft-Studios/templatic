@@ -1,0 +1,21 @@
+{
+  "name": "templatic",
+  "private": true,
+  "version": "0.0.0",
+  "description": "templatic monorepo",
+  "scripts": {
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "docs": "pnpm -r docs"
+  },
+  "devDependencies": {
+    "@kryft/naming-convention": "latest",
+    "@kryft/release-wizard": "latest",
+    "@kryft/setupjs": "^1.6.5",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.0.0",
+    "typedoc": "^0.28.0",
+    "typedoc-material-theme": "^1.4.0",
+    "typescript": "6.0.3"
+  }
+}
