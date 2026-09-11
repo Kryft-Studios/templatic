@@ -1,6 +1,6 @@
 {
   "name": "@templatic/core",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Core for all templatic templates",
   "type": "module",
   "main": "./dist/index.js",
