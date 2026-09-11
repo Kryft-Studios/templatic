@@ -1,7 +1,7 @@
 {
   "name": "@templatic/core",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.5",
+  "description": "Core for all templatic templates",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,15 +20,18 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "build": "pnpm lint && node build.js",
+    "build-core": " node build.js",
     "lint": "eslint .",
     "release": "krw",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build-core"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "chalk": "^6.0.0"
+  },
+  "devDependencies": {
+    "glob": "^13.0.6"
   }
 }
