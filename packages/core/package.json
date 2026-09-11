@@ -1,5 +1,5 @@
 {
-  "name": "templatic",
+  "name": "@templatic/core",
   "version": "0.0.0",
   "description": "",
   "type": "module",
@@ -22,10 +22,13 @@
   "scripts": {
     "build": "pnpm lint && node build.js",
     "lint": "eslint .",
-    "docs": "typedoc",
-    "release": "krw"
+    "release": "krw",
+    "prepublishOnly": "pnpm build"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "chalk": "^6.0.0"
   }
 }

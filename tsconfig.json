@@ -1,21 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "target": "esnext",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
-    "lib": [
-      "DOM",
-      "DOM.AsyncIterable",
-      "DOM.Iterable",
-      "Decorators",
-      "ES2024",
-      "ES2025.Float16",
-      "ESNext",
-      "WebWorker",
-      "ScriptHost"
-    ]
   }
 }
