@@ -1,6 +1,6 @@
 {
   "name": "@templatic/core",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "Core for all templatic templates",
   "type": "module",
   "main": "./dist/index.js",
@@ -30,8 +30,5 @@
   },
   "dependencies": {
     "chalk": "^6.0.0"
-  },
-  "devDependencies": {
-    "glob": "^13.0.6"
   }
 }
