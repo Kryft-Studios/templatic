@@ -3,15 +3,14 @@
 import { build } from "esbuild";
 import { execSync } from "node:child_process";
 import { globSync, readFileSync } from "node:fs";
-const entryPoints = globSync("src/**/*.ts")
-
+const entryPoints =globSync("src/**/*.ts")
 await build({
     entryPoints,
     outdir: "dist",
     bundle: false,
     minify: true,
     format: "esm",
-    entryNames: "[name]",
-    sourcemap: false
+    entryNames: "[dir]/[name]",
+    sourcemap: false,
 });
-execSync("tsc --emitDeclarationOnly");
+//execSync("tsc --emitDeclarationOnly")

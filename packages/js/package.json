@@ -1,0 +1,39 @@
+{
+  "name": "@templatic/js",
+  "version": "0.1.0",
+  "description": "Templatic Javascript Template",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "author": {
+    "name": "Kryft-Studios",
+    "email": "AfriaStudios@outlook.on"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": " node build.js",
+    "lint": "eslint .",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.7.2",
+    "@templatic/core": "^1.0.0",
+    "chalk": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "glob": "^13.0.6"
+  }
+}
