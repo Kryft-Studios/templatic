@@ -17,7 +17,7 @@ import { checkIsObject } from "../core/helpers/checkIsObject.js";
 import { Builder } from "../core/builder.js";
 import { eslint } from "../core/lint.js";
 import { docs } from "../core/docs.js";
-import {Git} from "../core/gitmgr.js"
+import { Git } from "../core/gitmgr.js";
 import { it } from "node:test";
 import { execSync } from "node:child_process";
 export class SinglePackage {
@@ -44,9 +44,10 @@ export class SinglePackage {
       options.type,
     );
     for (const a of options.dep) {
-      await pkManagr.dependency(a as string)
+      await pkManagr.dependency(a as string);
     }
-   await  tsConfig(
+    pkManagr.addExport(".", `./dist/index.js`, options.ts ? "./dist/index.d.ts" : void 0);
+    await tsConfig(
       options.src,
       options.dist,
       options.node,
@@ -74,7 +75,7 @@ export class SinglePackage {
 */
 export const NAME${options.ts ? ":string " : ""}="${name}";`,
     );
-   await Builder.handle(
+    await Builder.handle(
       options.builder as ("swc" | "terser" | "esbuild" | "tsc")[],
       JSON.parse(options.esbuildConfig),
       options.dist,
@@ -86,9 +87,14 @@ export const NAME${options.ts ? ":string " : ""}="${name}";`,
       writer,
     );
     if (options.lint)
-   await   eslint(writer, pkManagr, options.ts, options.eslintConfig as string[]);
+      await eslint(
+        writer,
+        pkManagr,
+        options.ts,
+        options.eslintConfig as string[],
+      );
     if (options.docs)
-    await  docs(
+      await docs(
         options.typedocPlugin as string[],
         src,
         PathHelpers.dir(options.docsdist),
@@ -103,7 +109,7 @@ export const NAME${options.ts ? ":string " : ""}="${name}";`,
       Git.remotes(options.remotes as string[]);
     }
     await pkManagr.generateCode(writer);
-    execSync(`${options.packageManager} install`)
+    execSync(`${options.packageManager} install`);
   }
 }
 export namespace SinglePackage {

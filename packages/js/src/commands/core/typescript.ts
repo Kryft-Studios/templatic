@@ -30,7 +30,11 @@ export async function tsConfig(
       strict,
       declaration: declarations,
       types,
-      lib: [...tslib, ...(!node ? ["DOM"] : [])],
+  ...(tslib.length > 0 || !node
+    ? {
+        lib: [...tslib, ...(!node ? ["DOM"] : [])],
+      }
+        : {}),
       rootDir,
       outDir: distDir,
       target,

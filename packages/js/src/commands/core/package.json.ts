@@ -40,7 +40,7 @@ export class PackageJSON {
   bin(name: string, path: string) {
     this.BIN[name] = path;
   }
-  readonly EXPORTS: Record<string, { default: string; types?: string }> = {};
+  readonly EXPORTS: Record<string, { types?: string, default: string }> = {};
   addExport(name: string, file: string, types?: string) {
     this.EXPORTS[name] = { default: file, ...(types ? { types } : {}) };
   }

@@ -35,7 +35,7 @@ ${add.join("\n")}`;
     execSync(`git commit -m ${commit}`);
   }
     export function writeGitIgnore(fs: FS.Writer, gitignore: boolean) {
-        if (gitignore) return;
+        if (!gitignore) return;
     fs.write(".gitignore", gitIgnoreContents);
   }
 }

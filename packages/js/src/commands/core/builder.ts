@@ -40,8 +40,10 @@ export namespace Builder {
         await pm.devDependency("@swc/core");
       } else if (builder === "tsc") {
         if(!pm.DEV_DEPS["typescript"])await pm.devDependency("typescript");
-      } else {
-        await pm.devDependency(builder);
+      } else if(builder==="esbuild") {
+        await pm.devDependency("esbuild");
+      } else if(builder==="terser"){
+        await pm.devDependency("terser")
       }
     }
 
